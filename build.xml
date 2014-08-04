@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="CyberCTM" default="build">
+<project name="Lazyprojet" default="build">
   <property name="workspace" value="${basedir}" />
   <property name="sourcedir" value="${basedir}/src" />
   <property name="builddir" value="${workspace}/app/build" />
@@ -138,7 +138,8 @@
   </target>
 
   <target name="vendors" description="Update vendors">
-    <exec executable="composer" failonerror="true">
+    <exec executable="php" failonerror="true">
+        <arg value="composer.phar" />
         <arg value="update" />
     </exec>
   </target>
