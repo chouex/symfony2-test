@@ -7,7 +7,8 @@
 
   <target name="build"
   depends="prepare,vendors,parameters,lint,phploc,pdepend,phpcpd,phpcs-ci,phpdox,phpunit,phpcb"/>
-
+<!-- <target name="build"
+  depends="prepare,vendors,parameters,lint,phploc,pdepend,phpcpd,phpcs-ci,phpdox,phpunit,phpcb"/> -->
   <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
   <target name="tools-parallel" description="Run tools in parallel">
@@ -139,6 +140,7 @@
     <exec executable="php" failonerror="true">
         <arg value="composer.phar" />
         <arg value="update" />
+        <arg value="--prefer-dist" />
     </exec>
   </target>
 
